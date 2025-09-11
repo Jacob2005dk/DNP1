@@ -5,6 +5,14 @@ namespace InMemoryRepositories;
 public class PostInMemoryRepository : IPostRepository
 {
     private List<Post> posts = new List<Post>();
+
+    public PostInMemoryRepository()
+    {
+        posts.Add(new Post {Title = "My stomach hurts!", Body = "I dont know why??", Id = 1, UserId = 1});
+        posts.Add(new Post {Title = "My brain hurts!", Body = "I want to know why!!", Id = 2, UserId = 2});
+        posts.Add(new Post {Title = "My finger hurts!", Body = "I like it", Id = 3, UserId = 3});
+        posts.Add(new Post {Title = "My teeth hurts!", Body = "I hate toothpaste", Id = 4, UserId = 4});
+    }
     
     public Task<Post> AddAsync(Post post)
     {

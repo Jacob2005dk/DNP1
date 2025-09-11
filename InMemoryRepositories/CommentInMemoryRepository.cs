@@ -6,6 +6,14 @@ namespace InMemoryRepositories;
 public class CommentInMemoryRepository : ICommentRepository
 {
     List<Comment> comments = new List<Comment>();
+
+    public CommentInMemoryRepository()
+    {
+        comments.Add(new  Comment {Body = "What da helly??", Id = 1, PostId = 1, UserId = 1});
+        comments.Add(new  Comment {Body = "What da helly??", Id = 2, PostId = 2, UserId = 2});
+        comments.Add(new  Comment {Body = "What da helly??", Id = 3, PostId = 3, UserId = 3});
+        comments.Add(new  Comment {Body = "What da helly??", Id = 4, PostId = 4, UserId = 4});
+    }
     
     public Task<Comment> AddAsync(Comment comment)
     {
